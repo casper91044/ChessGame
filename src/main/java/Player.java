@@ -48,6 +48,14 @@ public class Player {
         this.rank = rank;
     }
 
+    public void movePiece(Piece piece, Spot spot) {
+        if (isWhite() != piece.isWhite())
+            throw new IllegalArgumentException("Incorrect piece color. Try again. ");
+
+        piece.setSpot(spot);
+        System.out.println("Piece " + piece.getName() + " is moved to " + spot);
+    }
+
     @Override
     public String toString() {
         return "Player{" +

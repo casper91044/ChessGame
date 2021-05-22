@@ -3,6 +3,9 @@ public class Spot {
     int y;
 
     public Spot(String x, int y) {
+        if (x.compareTo("H") > 0 || y > 8 || y <= 0)
+            throw new IllegalArgumentException("Incorrect spot error. ");
+
         this.x = x;
         this.y = y;
     }
@@ -21,5 +24,13 @@ public class Spot {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Spot{" +
+                "x='" + x + '\'' +
+                ", y=" + y +
+                '}';
     }
 }
